@@ -1,0 +1,13 @@
+package singleton.pattern;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		DBConn dcon=DBConn.getInstance();
+		System.out.println(dcon.print());
+
+
+	}
+
+}
