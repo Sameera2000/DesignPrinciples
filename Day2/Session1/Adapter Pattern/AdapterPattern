@@ -1,0 +1,12 @@
+package adapterpattern;
+
+public class AdapterPattern {
+
+	public static void main(String[] args) {
+		Movable bugattiVeyron = new Buggativeyron(); 
+		MovableAdapter bvadapter = new MovableAdapterImpl(bugattiVeyron);
+		System.out.println("The speed of BugattiVeyron is "+bvadapter.getspeed()+" kmph");
+		System.out.println("The price of BugattiVeyron is "+bvadapter.getprice()+" eur");
+	}
+
+}
