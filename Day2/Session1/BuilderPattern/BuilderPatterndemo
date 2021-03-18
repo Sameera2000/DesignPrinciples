@@ -1,0 +1,16 @@
+package builder;
+
+public class BuilderPatternDemo {
+
+	public static void main(String[] args) {
+		MealBuilder mb=new MealBuilder();
+		Meal veg=mb.prepareVegMeal();
+		System.out.println("Veg Meal");
+		veg.showItem();
+		Meal nonveg=mb.prepareNonVegMeal();
+		System.out.println("NonVeg meal");
+		nonveg.showItem();
+		System.out.println("Total cost:"+(veg.getCost()+nonveg.getCost()));
+	}
+
+}
