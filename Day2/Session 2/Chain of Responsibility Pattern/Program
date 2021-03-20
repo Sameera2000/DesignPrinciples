@@ -1,0 +1,21 @@
+package chainofResponsibility;
+
+public class Program {
+
+	public static void main(String[] args) {
+		LeaveRequest lr=new LeaveRequest();
+		lr.setEmployee("Sameera");
+		lr.setLeaveDays(4);
+		ILeaveRequestHandler supervisor=new Spervisor();
+		ILeaveRequestHandler projectmanager=new ProjectManager();
+		ILeaveRequestHandler hr=new HR();
+		supervisor.nextHandler(projectmanager);
+		projectmanager.nextHandler(hr);
+		supervisor.HandleRequest(lr);
+		lr.setLeaveDays(3);
+		supervisor.HandleRequest(lr);
+		lr.setLeaveDays(10);
+		supervisor.HandleRequest(lr);
+	}
+
+}
