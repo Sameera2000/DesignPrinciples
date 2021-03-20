@@ -1,0 +1,19 @@
+package observerPattern;
+
+public class Main {
+
+	public static void main(String[] args) {
+		MessagePublisher p=new MessagePublisher();
+		MessageSubscriber1 ms1=new MessageSubscriber1(p);
+		MessageSubscriber2 ms2=new MessageSubscriber2(p);
+		MessageSubscriber3 ms3=new MessageSubscriber3(p);
+		p.setState("First State");
+		p.detach(ms2);
+		p.detach(ms3);
+		p.setState("Second State");
+		p.attach(ms3);
+		p.attach(ms1);
+		p.setState("Third State");
+	}
+
+}
